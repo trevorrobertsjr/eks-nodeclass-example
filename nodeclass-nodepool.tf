@@ -40,7 +40,7 @@ resource "aws_iam_role_policy_attachment" "custom_nodeclass_registry_policy" {
   role       = aws_iam_role.custom_nodeclass_role.name
 }
 
-# Additional policy for VPC networking (required for pod subnet functionality)
+# VPC networking policy as well for the pod subnet functionality
 resource "aws_iam_role_policy" "custom_nodeclass_vpc_policy" {
   name = "eks-t4g-nodeclass-vpc-policy"
   role = aws_iam_role.custom_nodeclass_role.id
